@@ -12,7 +12,7 @@ class DashboardController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('can:Dashboard')->only('index');
+        // $this->middleware('can:Dashboard')->only('index');
     }
 
     public function index()

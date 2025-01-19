@@ -1,24 +1,30 @@
+# Template Admin Laravel 10 Celestial
+
 ## Daftar Fitur Saat Ini
 
 -   Register
 -   Login
--   Edit Profile
+-   Edit Profil
 -   Manajemen Role
 -   Manajemen Permission
 -   Manajemen User
 
+---
+
 ## Persyaratan Sistem
 
-Sebelum Anda memulai instalasi, pastikan komputer Anda memenuhi persyaratan sistem berikut:
+Pastikan komputer Anda memenuhi persyaratan berikut sebelum memulai instalasi:
 
--   PHP >= 8.1
--   Composer - [Panduan Instalasi Composer](https://getcomposer.org/doc/00-intro.md)
--   Node.js & NPM - [Panduan Instalasi Node.js](https://nodejs.org/)
--   Git - [Panduan Instalasi Git](https://git-scm.com/)
+-   **PHP** >= 8.1
+-   **Composer** - [Panduan Instalasi Composer](https://getcomposer.org/doc/00-intro.md)
+-   **Node.js & NPM** - [Panduan Instalasi Node.js](https://nodejs.org/)
+-   **Git** - [Panduan Instalasi Git](https://git-scm.com/)
+
+---
 
 ## Instalasi Project
 
-Jika Sebelumnya sudah melakukan clone, anda bisa mengetikan perintah
+Jika Anda telah melakukan clone proyek sebelumnya, gunakan perintah berikut untuk memperbarui dan menginstal ulang:
 
 ```bash
 git pull
@@ -26,95 +32,127 @@ composer install
 php artisan migrate:fresh --seed
 ```
 
-di direktor project sebelumnya dan lewati langkah-langkah dibawah ini.
+Langkah-langkah di bawah ini dapat dilewati.
 
-## Langkah 1: Clone Project
+---
 
-Buka aplikasi git yang sudah di download dan sesuaikan direktori nya, jika anda ingin disimpan di htdocs ketikan perintah berikut :
+## Langkah 1: Clone Proyek
+
+Buka aplikasi Git dan arahkan ke direktori tempat Anda ingin menyimpan proyek. Misalnya, untuk XAMPP, ketik:
 
 ```bash
 cd C:\xampp\htdocs
 ```
 
-selanjutnya clone repositori proyek ini dari GitHub:
+Lalu, clone repositori:
 
 ```bash
 git clone https://github.com/agungkusaeri9/template-admin-laravel10-celestial.git template_laravel10
 ```
 
-## Langkah 2: Install Dependensi PHP
+---
 
-Anda perlu memasuki direktori proyek yang baru saja Anda clone dan menjalankan perintah berikut untuk menginstal semua dependensi PHP:
+## Langkah 2: Instal Dependensi PHP
+
+Masuk ke direktori proyek dan jalankan perintah berikut untuk menginstal semua dependensi PHP:
 
 ```bash
 cd template_laravel10
 composer install
 ```
 
+---
+
 ## Langkah 3: Konfigurasi Lingkungan
 
-Anda perlu menyalin file `.env.example` menjadi `.env` dan mengonfigurasi file `.env` sesuai dengan preferensi Anda:
+Salin file `.env.example` menjadi `.env` dan sesuaikan konfigurasi di dalamnya:
 
 ```bash
 cp .env.example .env
 php artisan key:generate
 ```
 
-## Langkah 4: Migrasi Database
+---
 
-Sesuaikan nama database, username, dan passwordnya, jika anda menggunakan xampp anda hanya menyesuaikan nama database nya saja, untuk mengkonfigurasi database di file `.env` seperti berikut :
+## Langkah 4: Konfigurasi Database
 
-```bash
-DB_DATABASE=template_laravel
+Edit file `.env` Anda untuk menyesuaikan nama database, username, dan password. Contoh konfigurasi untuk XAMPP:
+
+```env
+DB_DATABASE=template_laravel10
 DB_USERNAME=root
 DB_PASSWORD=
 ```
 
-Kemudian anda perlu membuat tabel-tabel yang diperlukan sekaligus dibuatkan user untuk login, dengan menjalankan migrasi dan seeder database:
+Selanjutnya, jalankan migrasi dan seed untuk membuat tabel serta pengguna awal:
 
 ```bash
 php artisan migrate --seed
 ```
 
-## Langkah 5: Menjalankan server
+---
 
-Untuk menjalankan server, tuliskan perintah berikut:
+## Langkah 5: Buat Storage Link
+
+Jalankan perintah berikut untuk membuat symbolic link storage:
+
+```bash
+php artisan storage:link
+```
+
+---
+
+## Langkah 6: Jalankan Server
+
+Jalankan server lokal menggunakan perintah berikut:
 
 ```bash
 php artisan serve
 ```
 
-## Langkah 6: Instalasi NPM Dependencies
-
-Untuk menginstal semua dependensi Node.js yang diperlukan, jalankan perintah berikut:
-
-```bash
-npm install
-```
-
-## Langkah 7: Kompilasi Asset
-
-Untuk mengkompilasi asset, jalankan perintah berikut:
-
-```bash
-npm run dev
-```
-
-biarkan berjalan bersaamaan dengan server.
-
-## Langkah 8 : Login ke Sistem
-
-Setelah semuanya berjalan dengan lancar, silahkan buka google chrome dan akses
+Akses proyek melalui browser di:
 
 ```bash
 http://127.0.0.1:8000
 ```
 
-Selanjutnya anda bisa melakukan login dengan :
+---
 
--   Email : admin@gmail.com
--   Password : admin
+## Langkah 7: Instal Dependensi NPM
 
-## Selamat! Anda telah berhasil menginstal proyek tersebut.
+Buka terminal baru dan instal semua dependensi Node.js:
 
-Catatan : Fitur akan terus saya perbaharui, anda bisa mengklik start untuk updatean selanjutnya.
+```bash
+npm install
+```
+
+---
+
+## Langkah 8: Kompilasi Asset
+
+Kompilasi asset frontend menggunakan perintah berikut:
+
+```bash
+npm run build
+```
+
+---
+
+## Langkah 9: Login ke Sistem
+
+Gunakan kredensial berikut untuk login ke sistem:
+
+-   **Email:** `superadmin@gmail.com`
+-   **Password:** `password`
+
+---
+
+## Selamat!
+
+Anda telah berhasil menginstal proyek ini.
+
+---
+
+### Catatan
+
+Proyek ini akan terus diperbarui. Jangan lupa untuk memberikan **star** di repositori untuk mendapatkan pembaruan terbaru. 😊
